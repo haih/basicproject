@@ -22,10 +22,10 @@
 #env.Program('./bin/test_co', ['./obj/unitest/test_co.cpp','./obj/common/Coroutine.cpp'])
 #env.Program('./bin/test_event', [Glob('./obj/unitest/test_event.cpp'),Glob('./obj/common/*.cpp'),Glob('./obj/engine/*.cpp')])
 VariantDir('./obj/','./src/',duplicate=0)
-engine_env=Environment(CCFLAGS = ['-std=c++0x'], 
+engine_env=Environment(CCFLAGS = ['-std=c++0x','-g','-Wall'], 
        #         ENV = os.environ, 
                 CPPPATH= './src/',
-		LIBS=['glog']
+		LIBS=['glog','pthread']
                 )
 engine_env.Program('./bin/basicproject', [Glob('./obj/*.cpp')])
 
