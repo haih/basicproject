@@ -13,6 +13,11 @@ basethread.h
 
 #include "define.h"
 #include <pthread.h>
+
+typedef pthread_t THREAD_HANDLE;
+
+typedef void* (*THREAD_CALLBACK)(void* );
+
 class CBaseThread
 {
 public:
@@ -20,10 +25,11 @@ public:
     constructor & destructor
     */
     CBaseThread();
-    virtual ~CBaseThread();
+    virtual ~CBaseThread()
+    {}
     virtual int Create();
     virtual int  Join();
-    
+    static void* ThreadCallback(void* pArg);
     
 private:
     pthread_t m_threadid;

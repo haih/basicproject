@@ -9,6 +9,8 @@
 using namespace std;
      
 #define LOG_TEST "[LOG_TEST]:"
+#define LOG_ERROR "[LOG_ERROR]"
+#define LOG_RUN "[LOG_RUN]"
 
 
 #define INFOTRACE()                                           LOG(INFO) 
