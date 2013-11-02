@@ -1,5 +1,5 @@
 /*-------------------------------------
-base  thread  in the server                        
+base  thread  in the server                       
 basethread.h  
  
  Author                                              
@@ -27,7 +27,7 @@ public:
     CBaseThread();
     virtual ~CBaseThread()
     {}
-    virtual int Create();
+    virtual int Create(THREAD_CALLBACK pCallback);
     virtual int  Join();
     static void* ThreadCallback(void* pArg);
     

@@ -2,23 +2,20 @@
 #include "basethread.h"
 #include "coroutine.h"
 
-/*
+
 void* workThread(void* pArg)
 {
-    cout<<"workThread"<<endl;
     if(NULL != pArg)
     {
         return NULL;
     }
-    while(1)
-    {
+  
         cout<<"workThread"<<endl;
-    }
+
     INFOTRACE()<<LOG_RUN<<"work Thread function test~";
-    pthread_exit((void*)pArg);
+   // pthread_exit((void*)pArg);
     return NULL ;
 }
-*/
 
 
 int main(int argc, char* argv[])
@@ -31,7 +28,7 @@ int main(int argc, char* argv[])
 //    LOG(INFO) << "google::InitGoogleLogging bin path=" << argv[0];
 
     CBaseThread *pThread = new CBaseThread();
-    pThread->Create();
+    pThread->Create(workThread);
     pThread->Join();
 
     return 0;
